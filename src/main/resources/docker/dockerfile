@@ -1,0 +1,8 @@
+#java 运行环境，java 程序首先需要在docker内安装好java镜像 我们这里直接从镜像库内 拿java:8   在linux 环境中安装好了  docker后 直接 拉去 docker pull java:8
+FROM java:8
+# 把打包好的 jar 放入docker 容器“/informationsystem” 为docker 容器内的地址
+ADD informationsystem-1.0.jar /informationsystem-1.0.jar
+#暴露出来给前端页面访问的端口 ，这里没有实际用处，做提示用
+EXPOSE 80
+# 执行的springboot 打包好的java 命令 ，“/informationsystem” 为docker容器内地址
+ENTRYPOINT ["java","-jar","/informationsystem-1.0.jar"]

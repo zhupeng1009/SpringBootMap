@@ -1,0 +1,154 @@
+先删除掉之前安装过的docker
+sudo apt-get remove docker docker-engine docker.io
+
+更新系统到最新
+sudo apt-get update
+
+安装软件包以允许通过HTTPS使用存储库： 这几个apt-transport-https ca-certificates curl software-properties-common 安装更新
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+添加Docker的官方GPG密钥：
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+通过搜索指纹的后8个字符，验证您现在是否拥有带有指纹9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88的密钥。
+sudo apt-key fingerprint 0EBFCD88
+
+使用以下命令来设置稳定的存储库。
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+更新apt软件包索引
+sudo apt-get update
+
+安装最新版本的Docker CE，或转到下一步以安装特定版本。 替换所有现有的Docker安装。
+sudo apt-get install docker-ce
+
+
+在生产系统上，您应该安装特定版本的Docker CE，而不要始终使用最新版本。 该输出被截断： 列出可用的版本。
+	
+apt-cache madison docker-ce
+
+选择安装版本
+sudo apt-get install docker-ce=18.06.3~ce~3-0~ubuntu
+
+到这里安装完毕---------------------------------------------------------------
+
+
+测试：
+
+sudo docker run hello-world
+
+
+
+若未启动，则启动docker服务：
+$ sudo systemctl start docker
+
+或者重启 service docker restart
+
+
+
+构建docker镜像 . 不能少 表示当前路径
+docker build -t springbootdemo .
+
+启动镜像  80 docker提供给页面访问端口  8181应用程序的端口 ，例如部署的tomcat 端口
+docker run  -itd -p 80:8181 springbootdemo bash
+-v /root/logs:/logs/ 日记地址
+docker run  -itd -p 80:8080 -v /root/logs:/logs/ information bash 
+
+docker run -di mysql -p 33306:3306  --net=host  mysql
+
+   5、docker命令使用
+
+    5.1 docker查看信息#docker info
+
+    5.2 docker查看镜像# docker images
+
+    5.3 docker 列出run的容器：#docker ps -a
+
+    5.4 pull docker镜像：#docker pull xxxxx
+
+    5.5 运行docker 容器
+
+        docker run xxxxx 
+
+        docker run -p 8080:80 --name 自定义名称 -it 镜像名称  /bin/bash
+
+    5.6 退出docker 容器但不停止运行：Ctrl+P+Q
+
+    5.7 停止docker 容器运行：#docker stop CONTAINERID
+
+    5.8 删除docker 容器#docker rm CONTAINERID
+
+    5.9 删除docker镜像：#docker rmi imageID
+
+    5.10 启动docker容器：#docker start CONTAINERID
+
+
+删除 docker 
+Uninstall Docker CE
+
+sudo apt-get purge docker-ce
+sudo rm -rf /var/lib/docker
+ 
+启动springboot 命令
+java -jar zhu-springboot-demo-0.0.1.jar
+
+
+
+
+进入docker 内部 
+docker exec -it 0b7a9dc884f0
+
+
+
+
+安装 docker compose
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+要安装其他版本的Compose，请替换1.24.1 为要使用的Compose版本。
+
+将可执行权限应用于二进制文件：
+sudo chmod +x /usr/local/bin/docker-compose
+
+测试安装是否成功
+docker-compose --version
+
+
+
+-----------docker-compose 常用命令
+
+docker-compose up -d nginx                     构建建启动nignx容器
+
+docker-compose exec nginx bash            登录到nginx容器中
+
+docker-compose down                              删除所有nginx容器,镜像
+
+docker-compose ps                                   显示所有容器
+
+docker-compose restart nginx                   重新启动nginx容器
+
+docker-compose run --no-deps --rm php-fpm php -v  在php-fpm中不启动关联容器，并容器执行php -v 执行完成后删除容器
+
+docker-compose build nginx                     构建镜像 。        
+
+docker-compose build --no-cache nginx   不带缓存的构建。
+
+docker-compose logs  nginx                     查看nginx的日志 
+
+docker-compose logs -f nginx                   查看nginx的实时日志
+
+ 
+
+docker-compose config  -q                        验证（docker-compose.yml）文件配置，当配置正确时，不输出任何内容，当文件配置错误，输出错误信息。 
+
+docker-compose events --json nginx       以json的形式输出nginx的docker日志
+
+docker-compose pause nginx                 暂停nignx容器
+
+docker-compose unpause nginx             恢复ningx容器
+
+docker-compose rm nginx                       删除容器（删除前必须关闭容器）
+
+docker-compose stop nginx                    停止nignx容器
+
+docker-compose start nginx                    启动nignx容器
