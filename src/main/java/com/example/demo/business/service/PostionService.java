@@ -16,7 +16,7 @@ public interface PostionService {
 	
 	PostionDO get(Long id);
 	
-	List<PostionDO> list(Map<String, Object> map);
+	List<PostionDO> list();
 
 	int save(PostionDO tPostion);
 	

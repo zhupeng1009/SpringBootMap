@@ -39,10 +39,9 @@ public class PostionController extends BaseController {
 	@ResponseBody
 	@GetMapping("/position/list")
 	@RequiresPermissions("business:position:list")
-	public List<PostionDO>  list(@RequestParam Map<String, Object> params){
+	public List<PostionDO>  list(){
 		//查询列表数据
-        Query  query = new Query(params);
-		List<PostionDO> tPostionList = postionService.list(query);
+		List<PostionDO> tPostionList = postionService.list();
 		return tPostionList ;
 	}
 

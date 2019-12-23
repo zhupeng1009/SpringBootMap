@@ -27,6 +27,6 @@ public interface MenuMapper {
 	@Insert("insert sys_menu(parent_id,name,url,perms,type) values(#{parentId},#{name},#{url},#{perms},#{type})")
 	int save(MenuDO menu);
 
-	@Update("UPDATE sys_menu SET  name=#{name}, url=#{url},  icon=#{icon},type=#{type},perms=#{perms} WHERE menu_id=#{menuId}")
+	@Update("UPDATE sys_menu SET  name=#{name}, url=#{url},  icon=#{icon},type=#{type},perms=#{perms},order_num=#{orderNum} WHERE menu_id=#{menuId}")
 	int update(MenuDO menu);
 }

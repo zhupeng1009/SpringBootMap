@@ -23,8 +23,8 @@ public class PostionServiceImpl implements PostionService {
 	}
 	
 	@Override
-	public List<PostionDO> list(Map<String, Object> map){
-		return postionMapper.list(map);
+	public List<PostionDO> list(){
+		return postionMapper.list();
 	}
 	@Override
 	public int save(PostionDO tPostion){

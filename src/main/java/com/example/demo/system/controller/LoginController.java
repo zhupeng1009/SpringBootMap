@@ -56,7 +56,6 @@ public class LoginController extends BaseController {
      */
     @GetMapping("/login")
     String login() {
-        log.error("hahahahahahahh");
         return "login";
     }
     /**

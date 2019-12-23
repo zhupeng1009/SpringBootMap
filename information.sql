@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 172.20.2.203
-Source Server Version : 80018
-Source Host           : 172.20.2.203:3306
+Source Server         : 172.20.2.200
+Source Server Version : 50721
+Source Host           : 172.20.2.200:3306
 Source Database       : information
 
 Target Server Type    : MYSQL
-Target Server Version : 80018
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2019-12-20 17:39:57
+Date: 2019-12-23 19:51:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `sys_log` (
   `ip` varchar(64) DEFAULT NULL COMMENT 'IP地址',
   `gmt_create` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=897 DEFAULT CHARSET=utf8 COMMENT='系统日志';
+) ENGINE=InnoDB AUTO_INCREMENT=914 DEFAULT CHARSET=utf8 COMMENT='系统日志';
 
 -- ----------------------------
 -- Records of sys_log
@@ -75,6 +75,23 @@ INSERT INTO sys_log VALUES ('893', '1', 'admin', '更新菜单', '5', 'com.examp
 INSERT INTO sys_log VALUES ('894', '1', 'admin', '编辑角色', '4', 'com.example.demo.system.controller.RoleController.edit()', '56', '127.0.0.1', '2019-12-18 14:51:53');
 INSERT INTO sys_log VALUES ('895', '1', 'admin', '编辑角色', '2', 'com.example.demo.system.controller.RoleController.edit()', '1', '127.0.0.1', '2019-12-18 14:51:58');
 INSERT INTO sys_log VALUES ('896', '1', 'admin', '更新角色', '23', 'com.example.demo.system.controller.RoleController.update()', '{\"menuIds\":[27,57,1,20,21,22,61,2,12,13,14,24,25,26,6,15,55,56,62,7,3,64,65,63],\"remark\":\"拥有最高权限\",\"roleId\":1,\"roleName\":\"超级用户角色\"}', '127.0.0.1', '2019-12-18 14:53:58');
+INSERT INTO sys_log VALUES ('897', '1', 'admin', '编辑角色', '3', 'com.example.demo.system.controller.RoleController.edit()', '1', '127.0.0.1', '2019-12-23 15:32:23');
+INSERT INTO sys_log VALUES ('898', '1', 'admin', '更新角色', '23', 'com.example.demo.system.controller.RoleController.update()', '{\"menuIds\":[20,21,22,61,2,12,13,14,24,25,26,6,15,55,56,62,7,3,64,65,63],\"remark\":\"拥有最高权限\",\"roleId\":1,\"roleName\":\"超级用户角色\"}', '127.0.0.1', '2019-12-23 15:32:34');
+INSERT INTO sys_log VALUES ('899', '1', 'admin', '编辑菜单', '3', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":3,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:32:53');
+INSERT INTO sys_log VALUES ('900', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":1,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:32:58');
+INSERT INTO sys_log VALUES ('901', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":3,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:33:04');
+INSERT INTO sys_log VALUES ('902', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":1,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:33:11');
+INSERT INTO sys_log VALUES ('903', '1', 'admin', '编辑菜单', '3', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502290187000,\"icon\":\"fa fa-bars\",\"menuId\":1,\"name\":\"基础管理\",\"orderNum\":1,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:33:13');
+INSERT INTO sys_log VALUES ('904', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":3,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:33:51');
+INSERT INTO sys_log VALUES ('905', '1', 'admin', '编辑菜单', '4', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502290187000,\"icon\":\"fa fa-bars\",\"menuId\":1,\"name\":\"基础管理\",\"orderNum\":1,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:35:37');
+INSERT INTO sys_log VALUES ('906', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502291215000,\"gmtModified\":1502691223000,\"icon\":\"fa fa-desktop\",\"menuId\":3,\"name\":\"系统管理\",\"orderNum\":2,\"parentId\":0,\"type\":0}}', '127.0.0.1', '2019-12-23 15:35:41');
+INSERT INTO sys_log VALUES ('907', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"\",\"menuId\":64,\"name\":\"情报显示\",\"orderNum\":1,\"parentId\":63,\"perms\":\"business:position\",\"type\":1,\"url\":\"/position\"}}', '127.0.0.1', '2019-12-23 15:36:25');
+INSERT INTO sys_log VALUES ('908', '1', 'admin', '编辑菜单', '4', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":3,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:39:03');
+INSERT INTO sys_log VALUES ('909', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":1,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:39:06');
+INSERT INTO sys_log VALUES ('910', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502290187000,\"icon\":\"fa fa-bars\",\"menuId\":1,\"name\":\"基础管理\",\"orderNum\":1,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:39:08');
+INSERT INTO sys_log VALUES ('911', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-bars\",\"menuId\":1,\"name\":\"基础管理\",\"orderNum\":2,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:39:12');
+INSERT INTO sys_log VALUES ('912', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502291215000,\"gmtModified\":1502691223000,\"icon\":\"fa fa-desktop\",\"menuId\":3,\"name\":\"系统管理\",\"orderNum\":2,\"parentId\":0,\"type\":0}}', '127.0.0.1', '2019-12-23 15:39:14');
+INSERT INTO sys_log VALUES ('913', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-desktop\",\"menuId\":3,\"name\":\"系统管理\",\"orderNum\":3,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:39:17');
 
 -- ----------------------------
 -- Table structure for `sys_macro`
@@ -125,18 +142,18 @@ CREATE TABLE `sys_menu` (
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO sys_menu VALUES ('1', '0', '基础管理', '', '', '0', 'fa fa-bars', '1', '2017-08-09 22:49:47', null);
+INSERT INTO sys_menu VALUES ('1', '0', '基础管理', '', '', '0', 'fa fa-bars', '2', '2017-08-09 22:49:47', null);
 INSERT INTO sys_menu VALUES ('2', '3', '系统菜单', '/sys/menu', 'sys:menu:menu', '1', 'fa fa-th-list', '3', '2017-08-09 22:55:15', null);
-INSERT INTO sys_menu VALUES ('3', '0', '系统管理', null, null, '0', 'fa fa-desktop', '2', '2017-08-09 23:06:55', '2017-08-14 14:13:43');
+INSERT INTO sys_menu VALUES ('3', '0', '系统管理', '', '', '0', 'fa fa-desktop', '3', '2017-08-09 23:06:55', '2017-08-14 14:13:43');
 INSERT INTO sys_menu VALUES ('6', '3', '用户管理', '/sys/user', 'sys:user:user', '1', 'fa fa-user', '1', '2017-08-10 14:12:11', null);
 INSERT INTO sys_menu VALUES ('7', '3', '角色管理', '/sys/role', 'sys:role:role', '1', 'fa fa-paw', '2', '2017-08-10 14:13:19', null);
-INSERT INTO sys_menu VALUES ('12', '6', '新增', '', 'sys:user:add', '2', '', '0', '2017-08-14 10:51:35', null);
-INSERT INTO sys_menu VALUES ('13', '6', '编辑', '', 'sys:user:edit', '2', '', '0', '2017-08-14 10:52:06', null);
-INSERT INTO sys_menu VALUES ('14', '6', '删除', null, 'sys:user:remove', '2', null, '0', '2017-08-14 10:52:24', null);
-INSERT INTO sys_menu VALUES ('15', '7', '新增', '', 'sys:role:add', '2', '', '0', '2017-08-14 10:56:37', null);
-INSERT INTO sys_menu VALUES ('20', '2', '新增', '', 'sys:menu:add', '2', '', '0', '2017-08-14 10:59:32', null);
-INSERT INTO sys_menu VALUES ('21', '2', '编辑', '', 'sys:menu:edit', '2', '', '0', '2017-08-14 10:59:56', null);
-INSERT INTO sys_menu VALUES ('22', '2', '删除', '', 'sys:menu:remove', '2', '', '0', '2017-08-14 11:00:26', null);
+INSERT INTO sys_menu VALUES ('12', '6', '新增', '', 'sys:user:add', '2', '', '1', '2017-08-14 10:51:35', null);
+INSERT INTO sys_menu VALUES ('13', '6', '编辑', '', 'sys:user:edit', '2', '', '2', '2017-08-14 10:52:06', null);
+INSERT INTO sys_menu VALUES ('14', '6', '删除', null, 'sys:user:remove', '2', null, '3', '2017-08-14 10:52:24', null);
+INSERT INTO sys_menu VALUES ('15', '7', '新增', '', 'sys:role:add', '2', '', '1', '2017-08-14 10:56:37', null);
+INSERT INTO sys_menu VALUES ('20', '2', '新增', '', 'sys:menu:add', '2', '', '1', '2017-08-14 10:59:32', null);
+INSERT INTO sys_menu VALUES ('21', '2', '编辑', '', 'sys:menu:edit', '2', '', '2', '2017-08-14 10:59:56', null);
+INSERT INTO sys_menu VALUES ('22', '2', '删除', '', 'sys:menu:remove', '2', '', '3', '2017-08-14 11:00:26', null);
 INSERT INTO sys_menu VALUES ('24', '6', '批量删除', '', 'sys:user:batchRemove', '2', '', '0', '2017-08-14 17:27:18', null);
 INSERT INTO sys_menu VALUES ('25', '6', '停用', null, 'sys:user:disable', '2', null, '0', '2017-08-14 17:27:43', null);
 INSERT INTO sys_menu VALUES ('26', '6', '重置密码', '', 'sys:user:resetPwd', '2', '', '0', '2017-08-14 17:28:34', null);
@@ -145,12 +162,12 @@ INSERT INTO sys_menu VALUES ('28', '27', '刷新', null, 'sys:log:list', '2', nu
 INSERT INTO sys_menu VALUES ('29', '27', '删除', null, 'sys:log:remove', '2', null, '0', '2017-08-14 22:30:43', null);
 INSERT INTO sys_menu VALUES ('30', '27', '清空', null, 'sys:log:clear', '2', null, '2', '2017-08-14 22:31:02', null);
 INSERT INTO sys_menu VALUES ('48', '1', '代码生成', '/generator', 'common:generator', '1', 'fa fa-code', '2', null, null);
-INSERT INTO sys_menu VALUES ('55', '7', '编辑', '', 'sys:role:edit', '2', '', null, null, null);
-INSERT INTO sys_menu VALUES ('56', '7', '删除', '', 'sys:role:remove', '2', null, null, null, null);
+INSERT INTO sys_menu VALUES ('55', '7', '编辑', '', 'sys:role:edit', '2', '', '2', null, null);
+INSERT INTO sys_menu VALUES ('56', '7', '删除', '', 'sys:role:remove', '2', null, '3', null, null);
 INSERT INTO sys_menu VALUES ('57', '1', '运行监控', '/druid/index.html', '', '1', 'fa fa-caret-square-o-right', '3', null, null);
-INSERT INTO sys_menu VALUES ('61', '2', '批量删除', '', 'sys:menu:batchRemove', '2', null, null, null, null);
-INSERT INTO sys_menu VALUES ('62', '7', '批量删除', '', 'sys:role:batchRemove', '2', null, null, null, null);
-INSERT INTO sys_menu VALUES ('63', '0', '情报分析', '', '', '0', 'fa fa-anchor', '3', null, null);
+INSERT INTO sys_menu VALUES ('61', '2', '批量删除', '', 'sys:menu:batchRemove', '2', null, '4', null, null);
+INSERT INTO sys_menu VALUES ('62', '7', '批量删除', '', 'sys:role:batchRemove', '2', null, '4', null, null);
+INSERT INTO sys_menu VALUES ('63', '0', '情报分析', '', '', '0', 'fa fa-anchor', '1', null, null);
 INSERT INTO sys_menu VALUES ('64', '63', '情报显示', '/position', 'business:position', '1', '', '1', null, null);
 INSERT INTO sys_menu VALUES ('65', '63', '设备概况', '/device', 'business:device', '1', null, '2', null, null);
 
@@ -184,7 +201,7 @@ CREATE TABLE `sys_role_menu` (
   `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
   `menu_id` bigint(20) DEFAULT NULL COMMENT '菜单ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1540 DEFAULT CHARSET=utf8 COMMENT='角色与菜单对应关系';
+) ENGINE=InnoDB AUTO_INCREMENT=1561 DEFAULT CHARSET=utf8 COMMENT='角色与菜单对应关系';
 
 -- ----------------------------
 -- Records of sys_role_menu
@@ -245,14 +262,12 @@ INSERT INTO sys_role_menu VALUES ('748', '51', '29');
 INSERT INTO sys_role_menu VALUES ('749', '51', '30');
 INSERT INTO sys_role_menu VALUES ('750', '51', '1');
 INSERT INTO sys_role_menu VALUES ('1038', '49', '-1');
-INSERT INTO sys_role_menu VALUES ('1039', '52', '50');
 INSERT INTO sys_role_menu VALUES ('1040', '52', '49');
 INSERT INTO sys_role_menu VALUES ('1064', '54', '53');
 INSERT INTO sys_role_menu VALUES ('1095', '55', '2');
 INSERT INTO sys_role_menu VALUES ('1096', '55', '6');
 INSERT INTO sys_role_menu VALUES ('1097', '55', '7');
 INSERT INTO sys_role_menu VALUES ('1098', '55', '3');
-INSERT INTO sys_role_menu VALUES ('1099', '55', '50');
 INSERT INTO sys_role_menu VALUES ('1100', '55', '49');
 INSERT INTO sys_role_menu VALUES ('1101', '55', '1');
 INSERT INTO sys_role_menu VALUES ('1375', '59', '1');
@@ -260,30 +275,27 @@ INSERT INTO sys_role_menu VALUES ('1376', '59', '3');
 INSERT INTO sys_role_menu VALUES ('1513', '56', '63');
 INSERT INTO sys_role_menu VALUES ('1514', '56', '64');
 INSERT INTO sys_role_menu VALUES ('1515', '56', '65');
-INSERT INTO sys_role_menu VALUES ('1516', '1', '27');
-INSERT INTO sys_role_menu VALUES ('1517', '1', '57');
-INSERT INTO sys_role_menu VALUES ('1518', '1', '1');
-INSERT INTO sys_role_menu VALUES ('1519', '1', '20');
-INSERT INTO sys_role_menu VALUES ('1520', '1', '21');
-INSERT INTO sys_role_menu VALUES ('1521', '1', '22');
-INSERT INTO sys_role_menu VALUES ('1522', '1', '61');
-INSERT INTO sys_role_menu VALUES ('1523', '1', '2');
-INSERT INTO sys_role_menu VALUES ('1524', '1', '12');
-INSERT INTO sys_role_menu VALUES ('1525', '1', '13');
-INSERT INTO sys_role_menu VALUES ('1526', '1', '14');
-INSERT INTO sys_role_menu VALUES ('1527', '1', '24');
-INSERT INTO sys_role_menu VALUES ('1528', '1', '25');
-INSERT INTO sys_role_menu VALUES ('1529', '1', '26');
-INSERT INTO sys_role_menu VALUES ('1530', '1', '6');
-INSERT INTO sys_role_menu VALUES ('1531', '1', '15');
-INSERT INTO sys_role_menu VALUES ('1532', '1', '55');
-INSERT INTO sys_role_menu VALUES ('1533', '1', '56');
-INSERT INTO sys_role_menu VALUES ('1534', '1', '62');
-INSERT INTO sys_role_menu VALUES ('1535', '1', '7');
-INSERT INTO sys_role_menu VALUES ('1536', '1', '3');
-INSERT INTO sys_role_menu VALUES ('1537', '1', '64');
-INSERT INTO sys_role_menu VALUES ('1538', '1', '65');
-INSERT INTO sys_role_menu VALUES ('1539', '1', '63');
+INSERT INTO sys_role_menu VALUES ('1540', '1', '20');
+INSERT INTO sys_role_menu VALUES ('1541', '1', '21');
+INSERT INTO sys_role_menu VALUES ('1542', '1', '22');
+INSERT INTO sys_role_menu VALUES ('1543', '1', '61');
+INSERT INTO sys_role_menu VALUES ('1544', '1', '2');
+INSERT INTO sys_role_menu VALUES ('1545', '1', '12');
+INSERT INTO sys_role_menu VALUES ('1546', '1', '13');
+INSERT INTO sys_role_menu VALUES ('1547', '1', '14');
+INSERT INTO sys_role_menu VALUES ('1548', '1', '24');
+INSERT INTO sys_role_menu VALUES ('1549', '1', '25');
+INSERT INTO sys_role_menu VALUES ('1550', '1', '26');
+INSERT INTO sys_role_menu VALUES ('1551', '1', '6');
+INSERT INTO sys_role_menu VALUES ('1552', '1', '15');
+INSERT INTO sys_role_menu VALUES ('1553', '1', '55');
+INSERT INTO sys_role_menu VALUES ('1554', '1', '56');
+INSERT INTO sys_role_menu VALUES ('1555', '1', '62');
+INSERT INTO sys_role_menu VALUES ('1556', '1', '7');
+INSERT INTO sys_role_menu VALUES ('1557', '1', '3');
+INSERT INTO sys_role_menu VALUES ('1558', '1', '64');
+INSERT INTO sys_role_menu VALUES ('1559', '1', '65');
+INSERT INTO sys_role_menu VALUES ('1560', '1', '63');
 
 -- ----------------------------
 -- Table structure for `sys_user`
@@ -358,7 +370,7 @@ CREATE TABLE `t_device` (
   `img` varchar(500) DEFAULT NULL,
   `add_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_device
@@ -381,7 +393,7 @@ CREATE TABLE `t_postion` (
   `img` varchar(100) DEFAULT NULL,
   `add_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_postion

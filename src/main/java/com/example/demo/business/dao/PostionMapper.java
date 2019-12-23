@@ -23,31 +23,8 @@ public interface PostionMapper {
 	@Select("select `id`, `type`, `pnumber`, `speed`, `longitude`, `latitude`, `img`, `add_time` from t_postion where id = #{id}")
 	PostionDO get(Long id);
 	
-	@Select("<script>" +
-	"select * from t_postion " + 
-			"<where>" + 
-		  		  "<if test=\"id != null and id != ''\">"+ "and id = #{id} " + "</if>" + 
-		  		  "<if test=\"type != null and type != ''\">"+ "and type = #{type} " + "</if>" + 
-		  		  "<if test=\"pnumber != null and pnumber != ''\">"+ "and pnumber = #{pnumber} " + "</if>" + 
-		  		  "<if test=\"speed != null and speed != ''\">"+ "and speed = #{speed} " + "</if>" + 
-		  		  "<if test=\"longitude != null and longitude != ''\">"+ "and longitude = #{longitude} " + "</if>" + 
-		  		  "<if test=\"latitude != null and latitude != ''\">"+ "and latitude = #{latitude} " + "</if>" + 
-		  		  "<if test=\"img != null and img != ''\">"+ "and img = #{img} " + "</if>" + 
-		  		  "<if test=\"addTime != null and addTime != ''\">"+ "and add_time = #{addTime} " + "</if>" + 
-		  			"</where>"+ 
-			" <choose>" + 
-	            "<when test=\"sort != null and sort.trim() != ''\">" + 
-	                "order by ${sort} ${order}" + 
-	            "</when>" + 
-				"<otherwise>" + 
-	                "order by id desc" + 
-				"</otherwise>" + 
-	        "</choose>"+
-			"<if test=\"offset != null and limit != null\">"+
-			"limit #{offset}, #{limit}" + 
-			"</if>"+
-			"</script>")
-	List<PostionDO> list(Map<String, Object> map);
+	@Select("select * from t_postion ")
+	List<PostionDO> list();
 
 	
 	@Insert("insert into t_postion (`type`, `pnumber`, `speed`, `longitude`, `latitude`, `img`, `add_time`)"

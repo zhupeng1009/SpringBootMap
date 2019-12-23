@@ -13,67 +13,85 @@
         .anchorBL span span{display: none;}
         </style>  
 		<script type="text/javascript" src="map/map_load.js"></script>
+        <script src="/js/jquery.min.js?v=2.1.4"></script>
     </head>  
     <body>  
-        <div id="allmap"></div> 
-    </body>  
-	<script type="text/javascript"> 
-	
-		// 百度地图API功能
-		var map = new BMap.Map("allmap");    // 创建Map实例
-        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
-        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
-        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
-        map.enableKeyboard();//启用键盘上下左右键移动地图
-		var point = new BMap.Point(116.404, 39.915);
-        map.centerAndZoom(point,5);//设定地图的中心点和坐标并将地图显示在地图容器中
-		
-		//添加地图类型控件
-        map.addControl(new BMap.MapTypeControl({
-			mapTypes:[
-				BMAP_HYBRID_MAP,
-                BMAP_NORMAL_MAP
-			]
-		}));
-		var data =[{
-			"type": "airplane",     
-			"pnumber": "12324234234",
-			"speed": "800km/h",        
-			"longitude":116.404, 
-			"latitude":39.915, 
-			"img": "map/img/airplane.jpg"
-			},{
-			"type": "car",     
-			"pnumber": "12324234234",
-			"speed": "80km/h",        
-			"longitude": 120.404, 
-			"latitude": 29.404, 
-			"img": "map/img/car.jpg"
-			},{
-			"type": "boat",     
-			"pnumber": "12324234234",
-			"speed": "50km/h",        
-			"longitude": 113.404, 
-			"latitude": 18.915, 
-			"img": "map/img/boat.jpg"
-			}];
-		for(var i = 0; i < data.length; i++){
-			var marker=new BMap.Marker(new BMap.Point(data[i].longitude,data[i].latitude));
-			var text="<h4 style='margin:0 0 5px 0;padding:0.2em 0'>设备信息</h4>"+"<img style='float:right;margin:4px' id='imgDemo' src='"+data[i].img+"' width='139' height='104' title=''/>"+
-			"<hr style='color:#0066FF'><font size='2' color='#0066FF'>设备类型：</font> "+"<font size='2'>"+data[i].type+"</font>"+
-			"<hr style='color:#0066FF'><font size='2' color='#0066FF'>设备编号：</font> "+"<font size='2'>"+data[i].pnumber+"</font>"+
-			"<hr style='color:#0066FF'><font size='2' color='#0066FF'>速度：</font> "+"<font size='2'>"+data[i].speed+"</font>"+
-			"<hr style='color:#0066FF'><font size='2' color='#0066FF'>经度：</font> "+"<font size='2'>"+data[i].longitude+"</font>"+
-			"<hr style='color:#0066FF'><font size='2' color='#0066FF'>纬度:</font> "+"<font size='2'>"+data[i].latitude+"</font>"+"<hr style='color:#0066FF'>";
-		
-			var infoWindow = new BMap.InfoWindow(text);
-			marker.infoWindow=infoWindow;
-			marker.addEventListener("click",function(e){
-			    this.openInfoWindow(e.target.infoWindow)
-			});
-            map.addOverlay(marker);
-		}
+        <div id="allmap"></div>
+    </body>
+	<script type="text/javascript">
+        createMap();
+        var dataDef =[{
+            "type": "airplane",
+            "pnumber": "12324234234",
+            "speed": "800km/h",
+            "longitude":116.404,
+            "latitude":39.915,
+            "img": "map/img/airplane.jpg"
+        },{
+            "type": "car",
+            "pnumber": "12324234234",
+            "speed": "80km/h",
+            "longitude": 120.404,
+            "latitude": 29.404,
+            "img": "map/img/car.jpg"
+        },{
+            "type": "boat",
+            "pnumber": "12324234234",
+            "speed": "50km/h",
+            "longitude": 113.404,
+            "latitude": 18.915,
+            "img": "map/img/boat.jpg"
+        }];
+        function createMap() {
+            // 百度地图API功能
+            var map = new BMap.Map("allmap");    // 创建Map实例
+            map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+            map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+            map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+            map.enableKeyboard();//启用键盘上下左右键移动地图
+            var point = new BMap.Point(116.404, 39.915);
+            map.centerAndZoom(point,5);//设定地图的中心点和坐标并将地图显示在地图容器中
 
+            //添加地图类型控件
+            map.addControl(new BMap.MapTypeControl({
+                mapTypes:[
+                    BMAP_HYBRID_MAP,
+                    BMAP_NORMAL_MAP
+                ]
+            }));
+            $.ajax({
+                url : "position/list",
+                type : "GET",
+                success : function(data) {
+                    console.log (data);
+                    var positions={}
+                    if(data==null ||data==undefined){
+                        positions=dataDef;
+                    }else {
+                        positions=data;
+                    }
+                    for(var i = 0; i < positions.length; i++){
+                        var marker=new BMap.Marker(new BMap.Point(positions[i].longitude,positions[i].latitude));
+                        var text="<h4 style='margin:0 0 5px 0;padding:0.2em 0'>设备信息</h4>"+"<img style='float:right;margin:4px' id='imgDemo' src='"+positions[i].img+"' width='139' height='104' title=''/>"+
+                            "<hr style='color:#0066FF'><font size='2' color='#0066FF'>设备类型：</font> "+"<font size='2'>"+positions[i].type+"</font>"+
+                            "<hr style='color:#0066FF'><font size='2' color='#0066FF'>设备编号：</font> "+"<font size='2'>"+positions[i].pnumber+"</font>"+
+                            "<hr style='color:#0066FF'><font size='2' color='#0066FF'>速度：</font> "+"<font size='2'>"+positions[i].speed+"</font>"+
+                            "<hr style='color:#0066FF'><font size='2' color='#0066FF'>经度：</font> "+"<font size='2'>"+positions[i].longitude+"</font>"+
+                            "<hr style='color:#0066FF'><font size='2' color='#0066FF'>纬度:</font> "+"<font size='2'>"+positions[i].latitude+"</font>"+"<hr style='color:#0066FF'>";
 
+                        var infoWindow = new BMap.InfoWindow(text);
+                        marker.infoWindow=infoWindow;
+                        marker.addEventListener("click",function(e){
+                            this.openInfoWindow(e.target.infoWindow)
+                        });
+                        map.addOverlay(marker);
+                    }
+                },
+                error:function (e) {
+
+                }
+            });
+
+        }
 	</script>  
 </html>
