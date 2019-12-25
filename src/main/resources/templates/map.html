@@ -81,8 +81,11 @@
 
                         var infoWindow = new BMap.InfoWindow(text);
                         marker.infoWindow=infoWindow;
-                        marker.addEventListener("click",function(e){
+                        marker.addEventListener("mouseover",function(e){
                             this.openInfoWindow(e.target.infoWindow)
+                        });
+                        marker.addEventListener("mouseout",function(e){
+                            this.closeInfoWindow(e.target.infoWindow)
                         });
                         map.addOverlay(marker);
                     }
