@@ -1,5 +1,6 @@
 package com.example.demo.business.service.impl;
 
+import com.example.demo.business.domain.DeviceVO;
 import com.example.demo.common.domin.PageDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,15 +20,15 @@ public class DeviceServiceImpl implements DeviceService {
 	private DeviceMapper deviceMapper;
 	
 	@Override
-	public DeviceDO get(Long id){
+	public DeviceVO get(Long id){
 		return deviceMapper.get(id);
 	}
 	
 	@Override
-	public PageDO<DeviceDO> list(Map<String, Object> map){
-		List<DeviceDO>  list=deviceMapper.list(map);
+	public PageDO<DeviceVO> list(Map<String, Object> map){
+		List<DeviceVO>  list=deviceMapper.list(map);
 		int total = deviceMapper.count(map);
-		PageDO<DeviceDO> page=new PageDO<>();
+		PageDO<DeviceVO> page=new PageDO<>();
 		page.setTotal(total);
 		page.setRows(list);
 		return page;

@@ -1,6 +1,7 @@
 package com.example.demo.business.service;
 
 import com.example.demo.business.domain.DeviceDO;
+import com.example.demo.business.domain.DeviceVO;
 import com.example.demo.common.domin.PageDO;
 
 import java.util.List;
@@ -14,10 +15,10 @@ import java.util.Map;
  * @date 2019-12-17 14:33:39
  */
 public interface DeviceService {
+
+	DeviceVO get(Long id);
 	
-	DeviceDO get(Long id);
-	
-	PageDO<DeviceDO> list(Map<String, Object> map);
+	PageDO<DeviceVO> list(Map<String, Object> map);
 	
 	int save(DeviceDO tDevice);
 	

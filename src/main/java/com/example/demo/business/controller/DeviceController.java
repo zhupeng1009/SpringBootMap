@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.demo.business.domain.DeviceDO;
+import com.example.demo.business.domain.DeviceVO;
 import com.example.demo.common.domin.PageDO;
 import com.example.demo.common.domin.Query;
 import com.example.demo.common.domin.ReturnResult;
@@ -41,7 +42,7 @@ public class DeviceController {
 	
 	@ResponseBody
 	@GetMapping("/list")
-	public PageDO<DeviceDO> list(@RequestParam Map<String, Object> params){
+	public PageDO<DeviceVO> list(@RequestParam Map<String, Object> params){
 		//查询列表数据
         Query query = new Query(params);
 		return deviceService.list(query);
@@ -52,7 +53,7 @@ public class DeviceController {
 	 */
 	@RequestMapping("/info/{id}")
 	public ReturnResult info(@PathVariable("id") Long id){
-		DeviceDO tDevice = deviceService.get(id);
+		DeviceVO tDevice = deviceService.get(id);
 		return ReturnResult.ok().put("tDevice", tDevice);
 	}
 
