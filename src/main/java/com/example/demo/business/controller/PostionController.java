@@ -1,22 +1,19 @@
 package com.example.demo.business.controller;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
+import com.alibaba.fastjson.JSON;
 import com.example.demo.common.controller.BaseController;
-import com.example.demo.common.domin.Query;
 import com.example.demo.common.domin.ReturnResult;
+import com.example.demo.common.exception.BusinessException;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.demo.business.domain.PostionDO;
+import com.example.demo.business.domain.PositionDO;
 import com.example.demo.business.service.PostionService;
 
 /**
@@ -38,11 +35,15 @@ public class PostionController extends BaseController {
 	}
 	@ResponseBody
 	@GetMapping("/position/list")
-	@RequiresPermissions("business:position:list")
-	public List<PostionDO>  list(){
+	public ReturnResult  list(){
 		//查询列表数据
-		List<PostionDO> tPostionList = postionService.list();
-		return tPostionList ;
+		List<PositionDO> tPostionList =new ArrayList<>();
+		try {
+			 tPostionList = postionService.list();
+		}catch (BusinessException ex){
+			return ReturnResult.error(ex.getMsg());
+		}
+		return ReturnResult.ok(tPostionList) ;
 	}
 
 }

@@ -1,6 +1,5 @@
 package com.example.demo.business.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import com.example.demo.business.domain.DeviceDO;
@@ -8,7 +7,6 @@ import com.example.demo.business.domain.DeviceVO;
 import com.example.demo.common.domin.PageDO;
 import com.example.demo.common.domin.Query;
 import com.example.demo.common.domin.ReturnResult;
-import com.example.demo.common.utils.PageUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

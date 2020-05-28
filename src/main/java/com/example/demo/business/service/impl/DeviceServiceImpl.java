@@ -42,7 +42,12 @@ public class DeviceServiceImpl implements DeviceService {
 	public int update(DeviceDO tDevice){
 		return deviceMapper.update(tDevice);
 	}
-	
+
+	@Override
+	public int updateByIp(String ip, String status) {
+		return deviceMapper.updateByIp(ip,status);
+	}
+
 	@Override
 	public int remove(Long id){
 		return deviceMapper.remove(id);

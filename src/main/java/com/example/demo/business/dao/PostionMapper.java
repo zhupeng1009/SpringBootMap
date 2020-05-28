@@ -1,9 +1,8 @@
 package com.example.demo.business.dao;
 
-import com.example.demo.business.domain.PostionDO;
+import com.example.demo.business.domain.PositionDO;
 
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -20,19 +19,19 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface PostionMapper {
 
-	@Select("select `id`, `type`, `pnumber`, `speed`, `longitude`, `latitude`, `img`, `add_time` from t_postion where id = #{id}")
-	PostionDO get(Long id);
+	@Select("select `id`, `type`, `pnumber`, `speed`, `longitude`, `latitude`, `img`, `add_time` from t_position where id = #{id}")
+    PositionDO get(Long id);
 	
-	@Select("select * from t_postion ")
-	List<PostionDO> list();
+	@Select("select * from t_position ")
+	List<PositionDO> list();
 
 	
-	@Insert("insert into t_postion (`type`, `pnumber`, `speed`, `longitude`, `latitude`, `img`, `add_time`)"
+	@Insert("insert into t_position (`type`, `pnumber`, `speed`, `longitude`, `latitude`, `img`, `add_time`)"
 	+ "values (#{type}, #{pnumber}, #{speed}, #{longitude}, #{latitude}, #{img}, #{addTime})")
-	int save(PostionDO tPostion);
+	int save(PositionDO tPostion);
 	
 	@Update("<script>"+ 
-			"update t_postion " + 
+			"update t_position " +
 					"<set>" + 
 		            "<if test=\"id != null\">`id` = #{id}, </if>" + 
                     "<if test=\"type != null\">`type` = #{type}, </if>" + 
@@ -45,13 +44,13 @@ public interface PostionMapper {
           					"</set>" + 
 					"where id = #{id}"+
 			"</script>")
-	int update(PostionDO tPostion);
+	int update(PositionDO tPostion);
 	
-	@Delete("delete from t_postion where id =#{id}")
+	@Delete("delete from t_position where id =#{id}")
 	int remove(Long id);
 	
 	@Delete("<script>"+ 
-			"delete from t_postion where id in " + 
+			"delete from t_position where id in " +
 					"<foreach item=\"id\" collection=\"array\" open=\"(\" separator=\",\" close=\")\">" + 
 						"#{id}" + 
 					"</foreach>"+

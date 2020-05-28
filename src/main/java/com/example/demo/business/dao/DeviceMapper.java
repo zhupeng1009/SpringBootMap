@@ -6,11 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.demo.business.domain.DeviceVO;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
+
 /**
  * 
  * 
@@ -21,11 +18,11 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface DeviceMapper {
 
-	@Select("select `id`, `node_name`, `ip_address`, `status`, `img`, DATE_FORMAT(add_time,'%Y-%m-%d %h:%m:%s') as `add_time` from t_device where id = #{id}")
+	@Select("select `id`, `node_name`, `ip_address`, `status`, `img`, DATE_FORMAT(add_time,'%Y-%m-%d %H:%i:%S') as `add_time` from t_device where id = #{id}")
 	DeviceVO get(Long id);
 	
 	@Select("<script>" +
-	"select `id`, `node_name`, `ip_address`, `status`, `img`, DATE_FORMAT(add_time,'%Y-%m-%d %h:%m:%s') as `add_time` from t_device " +
+	"select `id`, `node_name`, `ip_address`, `status`, `img`, DATE_FORMAT(add_time,'%Y-%m-%d %H:%i:%S') as `add_time` from t_device " +
 			"<where>" + 
 		  		  "<if test=\"id != null and id != ''\">"+ "and id = #{id} " + "</if>" + 
 		  		  "<if test=\"nodeName != null and nodeName != ''\">"+ "and node_name = #{nodeName} " + "</if>" + 
@@ -77,6 +74,14 @@ public interface DeviceMapper {
 					"where id = #{id}"+
 			"</script>")
 	int update(DeviceDO tDevice);
+	@Update("<script>"+
+			"update t_device " +
+			"<set>" +
+			"<if test=\"status != null\">`status` = #{status} </if>" +
+			"</set>" +
+			"where ip_address = #{ipAddress}"+
+			"</script>")
+	int updateByIp(@Param("ipAddress")String ipAddress,@Param("status")String status);
 	
 	@Delete("delete from t_device where id =#{id}")
 	int remove(Long id);

@@ -20,10 +20,6 @@ public class ReturnResult extends HashMap<String, Object> {
 		return error(1, "fail");
 	}
 
-	public static ReturnResult error(String msg) {
-		return error(500, msg);
-	}
-
 	public static ReturnResult error(int code, String msg) {
 		ReturnResult r = new ReturnResult();
 		r.put("code", code);
@@ -31,9 +27,13 @@ public class ReturnResult extends HashMap<String, Object> {
 		return r;
 	}
 
-	public static ReturnResult ok(String data) {
+	public static ReturnResult error(String msg) {
+		return error(500, msg);
+	}
+
+	public static ReturnResult ok(Object object) {
 		ReturnResult r = new ReturnResult();
-		r.put("data", data);
+		r.put("data", object);
 		return r;
 	}
 

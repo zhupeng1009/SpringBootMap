@@ -23,6 +23,7 @@ public interface DeviceService {
 	int save(DeviceDO tDevice);
 	
 	int update(DeviceDO tDevice);
+	int updateByIp(String ip,String status);
 	
 	int remove(Long id);
 	

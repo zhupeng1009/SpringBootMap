@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 172.20.2.200
-Source Server Version : 50721
-Source Host           : 172.20.2.200:3306
+Source Server         : localhost
+Source Server Version : 50528
+Source Host           : localhost:3306
 Source Database       : information
 
 Target Server Type    : MYSQL
-Target Server Version : 50721
+Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2019-12-23 19:51:05
+Date: 2020-05-25 20:13:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,64 +34,6 @@ CREATE TABLE `sys_log` (
 -- ----------------------------
 -- Records of sys_log
 -- ----------------------------
-INSERT INTO sys_log VALUES ('856', '1', 'admin', '删除角色', '41', 'com.example.demo.system.controller.RoleController.save()', '55', '127.0.0.1', '2019-12-17 15:38:43');
-INSERT INTO sys_log VALUES ('857', '1', 'admin', '删除角色', '10', 'com.example.demo.system.controller.RoleController.save()', '52', '127.0.0.1', '2019-12-17 15:38:45');
-INSERT INTO sys_log VALUES ('858', '1', 'admin', '删除角色', '8', 'com.example.demo.system.controller.RoleController.save()', '49', '127.0.0.1', '2019-12-17 15:38:47');
-INSERT INTO sys_log VALUES ('859', '1', 'admin', '删除角色', '10', 'com.example.demo.system.controller.RoleController.save()', '48', '127.0.0.1', '2019-12-17 15:38:49');
-INSERT INTO sys_log VALUES ('860', '1', 'admin', '添加角色', '0', 'com.example.demo.system.controller.RoleController.add()', null, '127.0.0.1', '2019-12-17 15:38:54');
-INSERT INTO sys_log VALUES ('861', '1', 'admin', '添加菜单', '0', 'com.example.demo.system.controller.MenuController.add()', '{\"pId\":0,\"pName\":\"根目录\"}', '127.0.0.1', '2019-12-17 15:40:12');
-INSERT INTO sys_log VALUES ('862', '1', 'admin', '保存菜单', '12', 'com.example.demo.system.controller.MenuController.save()', '{\"icon\":\"fa fa-anchor\",\"name\":\"情报界面\",\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-17 15:44:26');
-INSERT INTO sys_log VALUES ('863', '1', 'admin', '添加菜单', '2', 'com.example.demo.system.controller.MenuController.add()', '{\"pId\":63,\"pName\":\"情报界面\"}', '127.0.0.1', '2019-12-17 15:44:35');
-INSERT INTO sys_log VALUES ('864', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"menuId\":63,\"name\":\"情报界面\",\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-17 15:44:53');
-INSERT INTO sys_log VALUES ('865', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-17 15:45:04');
-INSERT INTO sys_log VALUES ('866', '1', 'admin', '添加菜单', '2', 'com.example.demo.system.controller.MenuController.add()', '{\"pId\":63,\"pName\":\"情报分析\"}', '127.0.0.1', '2019-12-17 15:45:08');
-INSERT INTO sys_log VALUES ('867', '1', 'admin', '保存菜单', '3', 'com.example.demo.system.controller.MenuController.save()', '{\"icon\":\"\",\"name\":\"情报显示\",\"parentId\":63,\"perms\":\"business:map:show\",\"type\":1,\"url\":\"/map/show\"}', '127.0.0.1', '2019-12-17 15:46:43');
-INSERT INTO sys_log VALUES ('868', '1', 'admin', '编辑菜单', '3', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"menuId\":64,\"name\":\"情报显示\",\"parentId\":63,\"perms\":\"business:map:show\",\"type\":1,\"url\":\"/map/show\"}}', '127.0.0.1', '2019-12-17 15:46:54');
-INSERT INTO sys_log VALUES ('869', '1', 'admin', '更新菜单', '3', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"\",\"menuId\":64,\"name\":\"情报显示\",\"perms\":\"business:map:show\",\"type\":1,\"url\":\"map/show\"}', '127.0.0.1', '2019-12-17 15:46:58');
-INSERT INTO sys_log VALUES ('870', '1', 'admin', '添加菜单', '2', 'com.example.demo.system.controller.MenuController.add()', '{\"pId\":51,\"pName\":\"新增\"}', '127.0.0.1', '2019-12-17 15:47:11');
-INSERT INTO sys_log VALUES ('871', '1', 'admin', '删除菜单', '6', 'com.example.demo.system.controller.MenuController.remove()', '51', '127.0.0.1', '2019-12-17 15:47:14');
-INSERT INTO sys_log VALUES ('872', '1', 'admin', '删除菜单', '4', 'com.example.demo.system.controller.MenuController.remove()', '58', '127.0.0.1', '2019-12-17 15:47:15');
-INSERT INTO sys_log VALUES ('873', '1', 'admin', '删除菜单', '3', 'com.example.demo.system.controller.MenuController.remove()', '59', '127.0.0.1', '2019-12-17 15:47:17');
-INSERT INTO sys_log VALUES ('874', '1', 'admin', '删除菜单', '4', 'com.example.demo.system.controller.MenuController.remove()', '60', '127.0.0.1', '2019-12-17 15:47:19');
-INSERT INTO sys_log VALUES ('875', '1', 'admin', '添加菜单', '2', 'com.example.demo.system.controller.MenuController.add()', '{\"pId\":63,\"pName\":\"情报分析\"}', '127.0.0.1', '2019-12-17 15:47:41');
-INSERT INTO sys_log VALUES ('876', '1', 'admin', '保存菜单', '4', 'com.example.demo.system.controller.MenuController.save()', '{\"icon\":\"\",\"name\":\"设备概况\",\"parentId\":63,\"perms\":\"business:device:list\",\"type\":1,\"url\":\"device/list\"}', '127.0.0.1', '2019-12-17 15:48:53');
-INSERT INTO sys_log VALUES ('877', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"\",\"menuId\":64,\"name\":\"情报显示\",\"parentId\":63,\"perms\":\"business:map:show\",\"type\":1,\"url\":\"map/show\"}}', '127.0.0.1', '2019-12-17 15:49:07');
-INSERT INTO sys_log VALUES ('878', '1', 'admin', '更新菜单', '16', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"\",\"menuId\":64,\"name\":\"情报显示\",\"perms\":\"business:map:show\",\"type\":1,\"url\":\"position/show\"}', '127.0.0.1', '2019-12-17 15:49:21');
-INSERT INTO sys_log VALUES ('879', '1', 'admin', '编辑角色', '11', 'com.example.demo.system.controller.RoleController.edit()', '1', '127.0.0.1', '2019-12-17 15:49:31');
-INSERT INTO sys_log VALUES ('880', '1', 'admin', '更新角色', '111', 'com.example.demo.system.controller.RoleController.update()', '{\"menuIds\":[27,48,57,1,20,21,22,61,2,12,13,14,24,25,26,6,15,55,56,62,7,3,63,64,65],\"remark\":\"拥有最高权限\",\"roleId\":1,\"roleName\":\"超级用户角色\"}', '127.0.0.1', '2019-12-17 15:49:49');
-INSERT INTO sys_log VALUES ('881', '1', 'admin', '编辑角色', '2', 'com.example.demo.system.controller.RoleController.edit()', '1', '127.0.0.1', '2019-12-17 15:49:53');
-INSERT INTO sys_log VALUES ('882', '1', 'admin', '添加角色', '0', 'com.example.demo.system.controller.RoleController.add()', null, '127.0.0.1', '2019-12-17 15:49:59');
-INSERT INTO sys_log VALUES ('883', '1', 'admin', '保存角色', '14', 'com.example.demo.system.controller.RoleController.save()', '{\"menuIds\":[63,64,65],\"remark\":\"只能使用部分功能和部分数据\",\"roleId\":56,\"roleName\":\"普通用户\"}', '127.0.0.1', '2019-12-17 15:50:26');
-INSERT INTO sys_log VALUES ('884', '1', 'admin', '添加菜单', '2', 'com.example.demo.system.controller.MenuController.add()', '{\"pId\":1,\"pName\":\"基础管理\"}', '127.0.0.1', '2019-12-17 15:55:51');
-INSERT INTO sys_log VALUES ('885', '1', 'admin', '添加菜单', '0', 'com.example.demo.system.controller.MenuController.add()', '{\"pId\":0,\"pName\":\"根目录\"}', '127.0.0.1', '2019-12-17 15:55:54');
-INSERT INTO sys_log VALUES ('886', '1', 'admin', '编辑菜单', '1', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502290187000,\"icon\":\"fa fa-bars\",\"menuId\":1,\"name\":\"基础管理\",\"orderNum\":1,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-17 16:03:13');
-INSERT INTO sys_log VALUES ('887', '1', 'admin', '添加用户', '2', 'com.example.demo.system.controller.UserController.add()', '{\"roles\":[{\"gmtCreate\":1502469832000,\"gmtModified\":1502536499000,\"remark\":\"拥有最高权限\",\"roleId\":1,\"roleName\":\"超级用户角色\",\"roleSign\":\"admin\",\"userIdCreate\":2},{\"remark\":\"只能使用部分功能和部分数据\",\"roleId\":56,\"roleName\":\"普通用户\"}]}', '127.0.0.1', '2019-12-17 16:18:26');
-INSERT INTO sys_log VALUES ('888', '1', 'admin', '保存用户', '45', 'com.example.demo.system.controller.UserController.save()', '{\"email\":\"250817@qq.com\",\"name\":\"qingbao\",\"password\":\"31a27ec1ab50301b91eef0e07045a319\",\"roleIds\":[56],\"userId\":3,\"username\":\"qingbao\"}', '127.0.0.1', '2019-12-17 16:19:09');
-INSERT INTO sys_log VALUES ('889', '1', 'admin', '编辑用户', '34', 'com.example.demo.system.controller.UserController.edit()', '{\"user\":{\"email\":\"250817@qq.com\",\"name\":\"qingbao\",\"password\":\"31a27ec1ab50301b91eef0e07045a319\",\"roleIds\":[56],\"userId\":3,\"username\":\"qingbao\"},\"roles\":[{\"gmtCreate\":1502469832000,\"gmtModified\":1502536499000,\"remark\":\"拥有最高权限\",\"roleId\":1,\"roleName\":\"超级用户角色\",\"roleSign\":\"false\",\"userIdCreate\":2},{\"remark\":\"只能使用部分功能和部分数据\",\"roleId\":56,\"roleName\":\"普通用户\",\"roleSign\":\"true\"}]}', '127.0.0.1', '2019-12-17 16:20:19');
-INSERT INTO sys_log VALUES ('890', '1', 'admin', '编辑用户', '8', 'com.example.demo.system.controller.UserController.edit()', '{\"user\":{\"email\":\"250817@qq.com\",\"name\":\"qingbao\",\"password\":\"31a27ec1ab50301b91eef0e07045a319\",\"roleIds\":[56],\"userId\":3,\"username\":\"qingbao\"},\"roles\":[{\"gmtCreate\":1502469832000,\"gmtModified\":1502536499000,\"remark\":\"拥有最高权限\",\"roleId\":1,\"roleName\":\"超级用户角色\",\"roleSign\":\"false\",\"userIdCreate\":2},{\"remark\":\"只能使用部分功能和部分数据\",\"roleId\":56,\"roleName\":\"普通用户\",\"roleSign\":\"true\"}]}', '127.0.0.1', '2019-12-17 16:20:23');
-INSERT INTO sys_log VALUES ('891', '1', 'admin', '更新用户', '31', 'com.example.demo.system.controller.UserController.update()', '{\"email\":\"250817@qq.com\",\"name\":\"qingbao\",\"roleIds\":[56],\"status\":1,\"userId\":3,\"username\":\"qingbao\"}', '127.0.0.1', '2019-12-17 16:20:28');
-INSERT INTO sys_log VALUES ('892', '1', 'admin', '编辑菜单', '3', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"\",\"menuId\":64,\"name\":\"情报显示\",\"orderNum\":1,\"parentId\":63,\"perms\":\"business:map:show\",\"type\":1,\"url\":\"position/show\"}}', '127.0.0.1', '2019-12-17 16:44:47');
-INSERT INTO sys_log VALUES ('893', '1', 'admin', '更新菜单', '5', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"\",\"menuId\":64,\"name\":\"情报显示\",\"orderNum\":1,\"perms\":\"business:position:show\",\"type\":1,\"url\":\"position/show\"}', '127.0.0.1', '2019-12-17 16:44:58');
-INSERT INTO sys_log VALUES ('894', '1', 'admin', '编辑角色', '4', 'com.example.demo.system.controller.RoleController.edit()', '56', '127.0.0.1', '2019-12-18 14:51:53');
-INSERT INTO sys_log VALUES ('895', '1', 'admin', '编辑角色', '2', 'com.example.demo.system.controller.RoleController.edit()', '1', '127.0.0.1', '2019-12-18 14:51:58');
-INSERT INTO sys_log VALUES ('896', '1', 'admin', '更新角色', '23', 'com.example.demo.system.controller.RoleController.update()', '{\"menuIds\":[27,57,1,20,21,22,61,2,12,13,14,24,25,26,6,15,55,56,62,7,3,64,65,63],\"remark\":\"拥有最高权限\",\"roleId\":1,\"roleName\":\"超级用户角色\"}', '127.0.0.1', '2019-12-18 14:53:58');
-INSERT INTO sys_log VALUES ('897', '1', 'admin', '编辑角色', '3', 'com.example.demo.system.controller.RoleController.edit()', '1', '127.0.0.1', '2019-12-23 15:32:23');
-INSERT INTO sys_log VALUES ('898', '1', 'admin', '更新角色', '23', 'com.example.demo.system.controller.RoleController.update()', '{\"menuIds\":[20,21,22,61,2,12,13,14,24,25,26,6,15,55,56,62,7,3,64,65,63],\"remark\":\"拥有最高权限\",\"roleId\":1,\"roleName\":\"超级用户角色\"}', '127.0.0.1', '2019-12-23 15:32:34');
-INSERT INTO sys_log VALUES ('899', '1', 'admin', '编辑菜单', '3', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":3,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:32:53');
-INSERT INTO sys_log VALUES ('900', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":1,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:32:58');
-INSERT INTO sys_log VALUES ('901', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":3,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:33:04');
-INSERT INTO sys_log VALUES ('902', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":1,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:33:11');
-INSERT INTO sys_log VALUES ('903', '1', 'admin', '编辑菜单', '3', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502290187000,\"icon\":\"fa fa-bars\",\"menuId\":1,\"name\":\"基础管理\",\"orderNum\":1,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:33:13');
-INSERT INTO sys_log VALUES ('904', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":3,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:33:51');
-INSERT INTO sys_log VALUES ('905', '1', 'admin', '编辑菜单', '4', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502290187000,\"icon\":\"fa fa-bars\",\"menuId\":1,\"name\":\"基础管理\",\"orderNum\":1,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:35:37');
-INSERT INTO sys_log VALUES ('906', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502291215000,\"gmtModified\":1502691223000,\"icon\":\"fa fa-desktop\",\"menuId\":3,\"name\":\"系统管理\",\"orderNum\":2,\"parentId\":0,\"type\":0}}', '127.0.0.1', '2019-12-23 15:35:41');
-INSERT INTO sys_log VALUES ('907', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"\",\"menuId\":64,\"name\":\"情报显示\",\"orderNum\":1,\"parentId\":63,\"perms\":\"business:position\",\"type\":1,\"url\":\"/position\"}}', '127.0.0.1', '2019-12-23 15:36:25');
-INSERT INTO sys_log VALUES ('908', '1', 'admin', '编辑菜单', '4', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":3,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:39:03');
-INSERT INTO sys_log VALUES ('909', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-anchor\",\"menuId\":63,\"name\":\"情报分析\",\"orderNum\":1,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:39:06');
-INSERT INTO sys_log VALUES ('910', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502290187000,\"icon\":\"fa fa-bars\",\"menuId\":1,\"name\":\"基础管理\",\"orderNum\":1,\"parentId\":0,\"perms\":\"\",\"type\":0,\"url\":\"\"}}', '127.0.0.1', '2019-12-23 15:39:08');
-INSERT INTO sys_log VALUES ('911', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-bars\",\"menuId\":1,\"name\":\"基础管理\",\"orderNum\":2,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:39:12');
-INSERT INTO sys_log VALUES ('912', '1', 'admin', '编辑菜单', '2', 'com.example.demo.system.controller.MenuController.edit()', '{\"menu\":{\"gmtCreate\":1502291215000,\"gmtModified\":1502691223000,\"icon\":\"fa fa-desktop\",\"menuId\":3,\"name\":\"系统管理\",\"orderNum\":2,\"parentId\":0,\"type\":0}}', '127.0.0.1', '2019-12-23 15:39:14');
-INSERT INTO sys_log VALUES ('913', '1', 'admin', '更新菜单', '4', 'com.example.demo.system.controller.MenuController.update()', '{\"icon\":\"fa fa-desktop\",\"menuId\":3,\"name\":\"系统管理\",\"orderNum\":3,\"perms\":\"\",\"type\":0,\"url\":\"\"}', '127.0.0.1', '2019-12-23 15:39:17');
 
 -- ----------------------------
 -- Table structure for `sys_macro`
@@ -359,6 +301,78 @@ INSERT INTO sys_user_role VALUES ('110', '1', '1');
 INSERT INTO sys_user_role VALUES ('112', '3', '56');
 
 -- ----------------------------
+-- Table structure for `t_airplane`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_airplane`;
+CREATE TABLE `t_airplane` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) DEFAULT NULL,
+  `pnumber` varchar(32) DEFAULT NULL,
+  `speed` decimal(10,7) DEFAULT NULL,
+  `longitude` decimal(10,7) DEFAULT NULL,
+  `latitude` decimal(10,7) DEFAULT NULL,
+  `img` varchar(100) DEFAULT NULL,
+  `add_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_airplane
+-- ----------------------------
+INSERT INTO t_airplane VALUES ('1', 'airplane', '12324234235', '822.0000000', '120.4041000', '39.9150000', 'map/img/airplane.jpg', '2019-12-17 13:50:45');
+INSERT INTO t_airplane VALUES ('2', 'airplane', '12324234235', '843.0000000', '120.4043000', '39.9152000', 'map/img/airplane.jpg', '2019-12-17 13:51:50');
+INSERT INTO t_airplane VALUES ('3', 'airplane', '12324234235', '811.0000000', '120.4044000', '39.9150000', 'map/img/airplane.jpg', '2019-12-17 13:52:33');
+INSERT INTO t_airplane VALUES ('4', 'airplane', '12324234235', '943.0000000', '120.4042000', '39.9563000', 'map/img/airplane.jpg', '2020-05-25 18:59:59');
+INSERT INTO t_airplane VALUES ('5', 'airplane', '12324234235', '888.0000000', '120.4043000', '39.9565000', 'map/img/airplane.jpg', '2020-05-25 19:03:11');
+INSERT INTO t_airplane VALUES ('6', 'airplane', '12324234235', '866.0000000', '120.4044000', '39.9564000', 'map/img/airplane.jpg', '2020-05-25 19:07:14');
+
+-- ----------------------------
+-- Table structure for `t_boat`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_boat`;
+CREATE TABLE `t_boat` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) DEFAULT NULL,
+  `pnumber` varchar(32) DEFAULT NULL,
+  `speed` decimal(10,7) DEFAULT NULL,
+  `longitude` decimal(10,7) DEFAULT NULL,
+  `latitude` decimal(10,7) DEFAULT NULL,
+  `img` varchar(100) DEFAULT NULL,
+  `add_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_boat
+-- ----------------------------
+INSERT INTO t_boat VALUES ('1', 'boat', '12324234234', '54.0000000', '113.4060000', '18.9160000', 'map/img/boat.jpg', '2019-12-17 13:50:45');
+INSERT INTO t_boat VALUES ('2', 'boat', '12324234234', '55.0000000', '113.4050000', '18.4030000', 'map/img/boat.jpg', '2019-12-17 13:51:50');
+INSERT INTO t_boat VALUES ('3', 'boat', '12324234234', '50.0000000', '113.4040000', '18.9150000', 'map/img/boat.jpg', '2019-12-17 13:52:33');
+
+-- ----------------------------
+-- Table structure for `t_car`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_car`;
+CREATE TABLE `t_car` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) DEFAULT NULL,
+  `pnumber` varchar(32) DEFAULT NULL,
+  `speed` decimal(10,7) DEFAULT NULL,
+  `longitude` decimal(10,7) DEFAULT NULL,
+  `latitude` decimal(10,7) DEFAULT NULL,
+  `img` varchar(100) DEFAULT NULL,
+  `add_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_car
+-- ----------------------------
+INSERT INTO t_car VALUES ('1', 'car', '12324234236', '110.0000000', '116.4040000', '29.9160000', 'map/img/car.jpg', '2019-12-17 13:50:45');
+INSERT INTO t_car VALUES ('2', 'car', '12324234236', '80.0000000', '116.4040000', '29.9150000', 'map/img/car.jpg', '2019-12-17 13:51:50');
+INSERT INTO t_car VALUES ('3', 'car', '12324234236', '50.0000000', '116.4040000', '28.9170000', 'map/img/car.jpg', '2019-12-17 13:52:33');
+
+-- ----------------------------
 -- Table structure for `t_device`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_device`;
@@ -375,15 +389,15 @@ CREATE TABLE `t_device` (
 -- ----------------------------
 -- Records of t_device
 -- ----------------------------
-INSERT INTO t_device VALUES ('1', '上海节点', '10.17.1.100', 'up', '', '2019-12-17 09:53:18');
-INSERT INTO t_device VALUES ('2', '北京节点', '10.18.1.100', 'up', null, '2019-12-17 13:53:11');
-INSERT INTO t_device VALUES ('3', '广州节点', '10.19.1.100', 'up', null, '2019-12-17 13:53:33');
+INSERT INTO t_device VALUES ('1', '服务器1', 'localhost', 'down', '', '2019-12-17 09:53:18');
+INSERT INTO t_device VALUES ('2', '服务器2', '127.0.0.1', 'down', null, '2019-12-17 13:53:11');
+INSERT INTO t_device VALUES ('3', '服务器3', '192.168.0.1', 'down', null, '2019-12-17 13:53:33');
 
 -- ----------------------------
--- Table structure for `t_postion`
+-- Table structure for `t_position`
 -- ----------------------------
-DROP TABLE IF EXISTS `t_postion`;
-CREATE TABLE `t_postion` (
+DROP TABLE IF EXISTS `t_position`;
+CREATE TABLE `t_position` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `type` varchar(20) DEFAULT NULL,
   `pnumber` varchar(32) DEFAULT NULL,
@@ -396,8 +410,8 @@ CREATE TABLE `t_postion` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
--- Records of t_postion
+-- Records of t_position
 -- ----------------------------
-INSERT INTO t_postion VALUES ('1', 'airplane', '12324234234', '800.0000000', '116.4040000', '39.9150000', 'map/img/airplane.jpg', '2019-12-17 13:50:45');
-INSERT INTO t_postion VALUES ('2', 'car', '12324234235', '80.0000000', '120.4040000', '29.4040000', 'map/img/car.jpg', '2019-12-17 13:51:50');
-INSERT INTO t_postion VALUES ('3', 'boat', '12324234236', '50.0000000', '113.4040000', '18.9150000', 'map/img/boat.jpg', '2019-12-17 13:52:33');
+INSERT INTO t_position VALUES ('1', 'airplane', '12324234234', '800.0000000', '116.4040000', '39.9150000', 'map/img/airplane.jpg', '2019-12-17 13:50:45');
+INSERT INTO t_position VALUES ('2', 'car', '12324234235', '80.0000000', '120.4040000', '29.4040000', 'map/img/car.jpg', '2019-12-17 13:51:50');
+INSERT INTO t_position VALUES ('3', 'boat', '12324234236', '50.0000000', '113.4040000', '18.9150000', 'map/img/boat.jpg', '2019-12-17 13:52:33');

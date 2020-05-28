@@ -1,9 +1,9 @@
 package com.example.demo.business.service;
 
-import com.example.demo.business.domain.PostionDO;
+import com.example.demo.business.domain.PositionDO;
+import com.example.demo.common.exception.BusinessException;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 
@@ -14,13 +14,13 @@ import java.util.Map;
  */
 public interface PostionService {
 	
-	PostionDO get(Long id);
+	PositionDO get(Long id);
 	
-	List<PostionDO> list();
+	List<PositionDO> list() throws BusinessException;
 
-	int save(PostionDO tPostion);
+	int save(PositionDO tPostion);
 	
-	int update(PostionDO tPostion);
+	int update(PositionDO tPostion);
 	
 	int remove(Long id);
 	
