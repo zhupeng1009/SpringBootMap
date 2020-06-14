@@ -14,8 +14,18 @@
         </style>  
 		<script type="text/javascript" src="map/map_load.js"></script>
         <script src="/js/jquery.min.js?v=2.1.4"></script>
-    </head>  
-    <body>  
+    </head>
+
+    <body >
+        <div id="exampleToolbar"  class="form-inline">
+                <select id="type" name="type" >
+                    <option value="all">请选择</option>
+                    <option value="airplane">空中目标</option>
+                    <option value="boat">水面目标</option>
+                    <option value="car">陆地目标</option>
+                </select>
+            <button onclick="createMap()">查询</button>
+        </div>
         <div id="allmap"></div>
     </body>
 	<script type="text/javascript">
@@ -61,28 +71,17 @@
                 BMAP_NORMAL_MAP
             ]
         }));
-        intervalID =setInterval("createMap()",1000);
+       // intervalID =setInterval("createMap()",1000);
+
         function createMap() {
             map.clearOverlays(); //删除所有点
+            //console.log($('#type').find("option:selected").val())
             // 百度地图API功能
-     /*       var map = new BMap.Map("allmap");    // 创建Map实例
-            map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
-            map.enableScrollWheelZoom();//启用地图滚轮放大缩小
-            map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
-            map.enableKeyboard();//启用键盘上下左右键移动地图
-            var point = new BMap.Point(116.404, 39.915);
-            map.centerAndZoom(point,5);//设定地图的中心点和坐标并将地图显示在地图容器中
-
-            //添加地图类型控件
-            map.addControl(new BMap.MapTypeControl({
-                mapTypes:[
-                    BMAP_HYBRID_MAP,
-                    BMAP_NORMAL_MAP
-                ]
-            }));*/
+            var type={"type":$('#type').find("option:selected").val()};
             $.ajax({
                 url : "position/list",
                 type : "GET",
+                data:type,
                 success : function(data) {
                    // console.log (data);
                     var positions={}

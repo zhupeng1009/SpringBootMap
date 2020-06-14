@@ -16,7 +16,7 @@ public interface PostionService {
 	
 	PositionDO get(Long id);
 	
-	List<PositionDO> list() throws BusinessException;
+	List<PositionDO> list(String type) throws BusinessException;
 
 	int save(PositionDO tPostion);
 	

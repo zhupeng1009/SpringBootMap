@@ -11,6 +11,7 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.business.domain.PositionDO;
@@ -33,13 +34,15 @@ public class PostionController extends BaseController {
 	String show(){
 	    return "map";
 	}
+
+
 	@ResponseBody
 	@GetMapping("/position/list")
-	public ReturnResult  list(){
+	public ReturnResult  list(@RequestParam("type") String type){
 		//查询列表数据
 		List<PositionDO> tPostionList =new ArrayList<>();
 		try {
-			 tPostionList = postionService.list();
+			 tPostionList = postionService.list(type);
 		}catch (BusinessException ex){
 			return ReturnResult.error(ex.getMsg());
 		}

@@ -39,9 +39,9 @@ public class PostionServiceImpl implements PostionService {
 	}
 	
 	@Override
-	public List<PositionDO> list()throws BusinessException{
+	public List<PositionDO> list(String type)throws BusinessException{
 
-		return getPosition();
+		return getPosition(type);
 	}
 	@Override
 	public int save(PositionDO tPostion){
@@ -86,7 +86,7 @@ public class PostionServiceImpl implements PostionService {
 		return  vo;
 	}
 
-	private List<PositionDO> getPosition() throws BusinessException {
+	private List<PositionDO> getPosition(String type) throws BusinessException {
 		List<PositionDO> list=new ArrayList<>();
 		FutureTask<PositionDO> airplane = new FutureTask<>(() -> getAirPlane());
 		FutureTask<PositionDO> boat = new FutureTask<>(() -> getBoat());
@@ -95,24 +95,42 @@ public class PostionServiceImpl implements PostionService {
 		task.execute(airplane);
 		task.execute(boat);
 		task.execute(car);
-		try {
-			list.add(airplane.get());
-		}
-		catch (InterruptedException | ExecutionException ex){
-			Thread.interrupted();
-		}
-		try {
-			list.add(boat.get());
-		}
-		catch (InterruptedException  | ExecutionException ex){
-			//初选异常 让线程继续走
-			Thread.interrupted();
-		}
-		try {
-			list.add(car.get());
-		}
-		catch (InterruptedException | ExecutionException ex){
-			Thread.interrupted();
+		if("airplane".equals(type)){
+			try {
+				list.add(airplane.get());
+			} catch (InterruptedException | ExecutionException ex){
+				Thread.interrupted();
+			}
+		}else if("boat".equals(type)){
+			try {
+				list.add(boat.get());
+			} catch (InterruptedException  | ExecutionException ex){
+				//初选异常 让线程继续走
+				Thread.interrupted();
+			}
+		}else if("car".equals(type)){
+			try {
+				list.add(car.get());
+			} catch (InterruptedException | ExecutionException ex){
+				Thread.interrupted();
+			}
+		}else{
+			try {
+				list.add(airplane.get());
+			} catch (InterruptedException | ExecutionException ex){
+				Thread.interrupted();
+			}
+			try {
+				list.add(boat.get());
+			} catch (InterruptedException  | ExecutionException ex){
+				//初选异常 让线程继续走
+				Thread.interrupted();
+			}
+			try {
+				list.add(car.get());
+			} catch (InterruptedException | ExecutionException ex){
+				Thread.interrupted();
+			}
 		}
 		return list;
 	}
